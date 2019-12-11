@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Nav de la imagen */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; 
+  background: #ccc;
+  padding: 20px;
+}
+
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* información del estudiante */
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #B2BF50;
+  height: 300px; 
+}
+
+
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+.column {
+  background-color: #30979F;
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+
+.row:after {
+
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<h1 align="center">Introducción al Desarrollo de Aplicaciones Web</h2>
+  <br>
+  <br>
+
+
+
+
+<section>
+
+  <div>
+      <nav style="background-color:#154360;">
+        <img src="foto.jpg"
+        width="400"
+        height="250">
+    
+     </nav>
+
+  
+  <article>
+    <h1>Jenny Corrales González</h1>
+    <p>Estudiante del setimo semestre, de la carrera de Ingeniería en Computación del Instituto Tecnologico de Costa Rica</p>
+    <p>Durante el paso por la universidad he desarrollado el interes por areas como bases de datos y todo lo relacionado al manejo de datos.</p>
+    <p>Del mismo modo, he desarrollado interes por el area de requerimientos y manejo de proyectos.</p>
+  </article>
+
+  </div>  
+
+</section>
+
+<br>
+
+  <div class="row">
+  <div class="column" style="background-color:#1FAFBF;">
+    <h2>Tareas</h2>
+    <ol>
+        <li><a href="timeline.jpg">Internet Timeline</a> </li>
+        <li><a href="invest.pdf">Full Stack Developer</a> </li>
+    </ol>
+
+
+
+
+  </div>
+  <div class="column" style="background-color:#027373;">
+    <h2>Proyectos</h2>
+    <p>Todavia no hay proyectos disponibles</p>
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>
