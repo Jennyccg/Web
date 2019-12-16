@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <title>Register</title>
+    <link rel="shortcut icon" href="use.png" type="image/png" />
+    <meta charset="utf-8">
+
+    <!--JQUERY-->
+
+    
+    <!-- FBOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    <!-- Los iconos tipo Solid de Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!--  css-->
+    <link rel="stylesheet" type="text/css" href="indexRegistro.css" media="all"">
+
+
+</head>
+<body>
+
+
+     
+
+    <div class="modal-dialog text-center">
+        <div class="col-sm-10 main-section">
+            <div class="modal-content">
+
+                <div class="col-12 user-img">
+                    <img src="use.png" th:src="@{/img/user.png}"/>
+                </div>
+
+                <form class="col-12" th:action="@{/register}" method="get">
+
+                    <div class="form-group" id="user-group">
+                        <input type="text" class="form-control" placeholder="Nombre Completo" name="name"/>
+                    </div>
+                    <div class="form-group" id="user-group">
+                        <input type="text" class="form-control" placeholder="User" name="username"/>
+                    </div>
+
+                    <div class="form-group" id="contrasena-group">
+                        <input type="password" class="form-control" placeholder="Contraseña" name="password"/>
+                    </div>
+
+                     <div class="form-group" id="mail-group">
+                        <input type="email" class="form-control" placeholder="Correo" name="email"/>
+                    </div>
+                    <div class="form-group" id="cel-group">
+                        <input type="number" class="form-control" placeholder="Celular" name="cel"/>
+                    </div>
+
+                    <div class="form-group" id="date-group">
+                        <input type="date" class="form-control" placeholder="Fecha nacimiento" name="date"/>
+                    </div>
+
+                    <button id="bot" type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>  Registrar </button>
+                
+
+
+                    </div>
+
+                </form>
+
+
+
+
+
+
+                
+        </div>
+    </div>
+</body>
+</html>
