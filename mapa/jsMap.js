@@ -11,56 +11,152 @@ var OpenStreetMap_HOT= L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x
 }).addTo(mymap);
 
 
-//Catedral
-var marker = L.marker([9.9328047,-84.0791596]).addTo(mymap).bindPopup("Catedral Metropolitana de San José<br>San José");
+//Ruta1
+puntosSalida=[
+//
+{
+	"punto":[9.9328047,-84.0791596],
+	"nombre":"Catedral Metropolitana de San José<br>San José",
+	"icono":"catedral.png"
+},
+//
+{
+	"punto":[9.9325615,-84.0544059],
+	"nombre":"Iglesia de San Pedro Apostol<br> San Pedro,San José",
+	"icono":"sanpedro.png"
+},
+//
+{
+	"punto":[9.9082784,-83.9865866],
+	"nombre":"Parroquia nuestra Señora del Pilar<br> Tres Ríos, Cartago",
+	"icono":"tresri.png"
+},
+//
+{
+	"punto":[9.896845, -83.944233],
+	"nombre":"Cruz Roja",
+	"icono":"cruz.png"
+},
+//
+{
+	"punto":[9.8746112,-83.9358663],
+	"nombre":"Iglesia de San Nicolás de Tolentino <br> Taras, Cartago",
+	"icono":"taras.png"
+},
+{
+	"punto":[9.86417,-83.91310],
+	"nombre":"Basilica nuestra señora de los Angeles<br>Cartago",
+	"icono":"basilica.png"
 
-// San pedro
+},
 
-var marker = L.marker([9.9325615,-84.0544059]).addTo(mymap).bindPopup("Iglesia de San Pedro Apostol<br> San Pedro,San José ");
+{
+	"punto":[9.856666, -83.932168],
+	"nombre":"Sagrado corazón de Jesus<br>Cartago",
+	"icono":"sagrado.png"
+},
+//
+{
+	"punto":[9.844363, -83.938037],
+	"nombre":"Basilica inmaculada concepción<br> Tejar, Cartago",
+	"icono":"tejar.png"
+},
+//igl
+{
+	"punto":[9.373836, -83.702701],
+	"nombre":"Perez Zeledon",
+	"icono":"perez.png"
+},
+//
+{
+	"punto":[9.307487, -83.661641],
+	"nombre":"San Isidro",
+	"icono":"osa.png"
+},
+//
+{
+	"punto":[9.669371, -83.852676],
+	"nombre":"Cruz Roja",
+	"icono":"cruz.png"
+},
 
-// Tres ríos
+//
+{
+	"punto":[9.86417,-83.91310],
+	"nombre":"Basilica nuestra señora de los Angeles<br>Cartago",
+	"icono":"basilica.png"
 
-var marker = L.marker([9.9082784,-83.9865866]).addTo(mymap).addTo(mymap).bindPopup("Parroquia nuestra Señora del Pilar<br> Tres Ríos, Cartago ");
+}
 
-// Cruz Roja
-var cruz = L.icon({
-    iconUrl: 'cr.png',
-    shadowUrl: '',
+]
 
-    iconSize:     [50, 50], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+var listadoPuntos=[];
+var listadoPuntos2=[];
+var listadoPuntos3=[];
+
+puntosSalida.forEach(rut => {
+	var [lat,lon]= rut.punto;
+	listadoPuntos.push( [lat,lon]);
+	var nombre = rut.nombre;
+	var imag=rut.icono;
+
+	var cruz = L.icon({
+    iconUrl: imag, 
+    iconSize: [50, 50]  
+   
+	});
+
+	var marker = L.marker([lat,lon],{icon: cruz}).addTo(mymap).bindPopup(nombre);
 });
 
-var marker = L.marker([9.896845, -83.944233], {icon: cruz}).addTo(mymap).bindPopup(" Cruz Roja");
+var polygon = L.polygon(listadoPuntos).addTo(mymap);
+for (var k=0; k<6; k++ ){
+	listadoPuntos2[k]=listadoPuntos[k];
 
-// Taras
-var marker = L.marker([9.8746112,-83.9358663]).addTo(mymap).addTo(mymap).bindPopup("Iglesia de San Nicolás de Tolentino <br> Taras, Cartago");
+}
 
-//Basilica
-var marker = L.marker([9.86417,-83.91310]).addTo(mymap).addTo(mymap).bindPopup("Basilica nuestra señora de los Angeles<br>Cartago ");
-
-
-
-var polygon = L.polygon([
-	[9.9328047,-84.0791596],
-	[9.9325615,-84.0544059],
-	[9.9082784,-83.9865866],
-	[9.897204, -83.944254],
-	[9.8746112,-83.9358663],
-	[9.86417,-83.91310]
+var polygon = L.polygon(listadoPuntos2).addTo(mymap);
 
 
+var trayecto = [];
 
+listadoPuntos2.forEach(rut => {
+    trayecto.push(L.latLng(rut[0], rut[1]));
+})
 
-]).addTo(mymap);
+L.Routing.control({
+    waypoints: trayecto
+}).addTo(mymap);
 
 
 
 
 
+//--------------------------------------
+for (var k=6; k<12; k++ ){
+	listadoPuntos3[k-6]=listadoPuntos[k];
+	
+
+}
+
+
+var polygon = L.polygon(listadoPuntos3).addTo(mymap);
+
+
+
+listadoPuntos3.forEach(rut => {
+    trayecto.push(L.latLng(rut[0], rut[1]));
+})
+
+L.Routing.control({
+    waypoints: trayecto
+}).addTo(mymap);
+
+
+
+
+
+//--------------------------------------------------------------------
 
 
 
