@@ -133,6 +133,7 @@ L.Routing.control({
 
 
 //--------------------------------------
+
 for (var k=6; k<12; k++ ){
 	listadoPuntos3[k-6]=listadoPuntos[k];
 	
