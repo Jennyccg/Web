@@ -1,0 +1,22 @@
+.element{
+    background-color: #E8EEF1; 
+
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-top-style: solid;
+    border-left-style: solid;
+
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+
+    border-width: 1px;
+
+}
+
+.row{
+
+}
+
+.col
