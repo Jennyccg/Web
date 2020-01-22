@@ -1,0 +1,124 @@
+.cabecera{
+	background: #333;
+	color: white;
+	height: 80px;
+	
+	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+	position: fixed; 
+	font-style: italic;
+
+}
+
+#anterior{
+
+	text-align:center;
+	color: black;
+	padding: 35px 80px 50px 50px;
+}
+
+#calendario{
+
+	text-align:center;
+	display: flex;
+	color: #FFFDFD;
+	padding: 50px 40px 0px 470px;
+	font-style: italic;
+}
+
+#titulos{
+
+	color: #FFFDFD;
+
+	
+}
+
+#posterior{
+	color: black;
+	padding: 35px 40px 50px 80px;
+
+}
+
+#fechaactual{
+	color: #FFFDFD;
+	font-style: italic;
+
+
+	text-align:center;
+	display: flex;
+	
+	padding: 50px 40px 0px 630px;
+	font-style: italic;
+}
+
+#buscafecha{
+	color: #FFFDFD;
+	font-style: italic;
+	text-align:center;
+	display: flex;
+	
+	padding: 0px 40px 0px 560px;
+	font-style: italic;
+}
+
+
+#diasc{
+	color: black;
+	font-style: italic;
+}
+
+.area2{
+	background: 80D7C2;
+	font-style: italic;
+}
+
+
+#fechaactual{
+
+}
+
+table{
+
+	width:400px ;
+	height:300px;
+	background: rgba(0,0,0,0.200)!important;
+
+
+
+
+}
+
+
+td{
+
+}
+
+#bot {
+  display: inline-block;
+  border-radius: 20px;
+  background-color: rgba(130, 85, 175,0.400);
+  border:black;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 10px;
+  padding: 20px;
+  width: 100px;
+
+  cursor: pointer;
+  margin: 5px;
+
+}
+
+#select-css{
+	border-radius: 7px;
+
+}
+
+
+#ano{
+
+	border-radius: 7px;
+	border:black;
+
+}
